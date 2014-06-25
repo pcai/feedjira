@@ -16,6 +16,7 @@ module Feedjira
       element :managingEditor
       element :title
       element :link, :as => :url
+      attribute :text, :as => :a_text
 
       # If author is not present use managingEditor on the channel
       element :"itunes:author", :as => :itunes_author
@@ -33,7 +34,8 @@ module Feedjira
       # ...and multiple sub-categories per category
       # TODO subcategories not supported correctly - they are at the same level
       #   as the main categories
-      elements :"itunes:category", :as => :itunes_categories, :value => :text
+      elements :"itunes:category", :as => :itunes_categories, :value => :a_text
+      element :"category", :as => :category, :value => :text
 
       elements :"itunes:owner", :as => :itunes_owners, :class => ITunesRSSOwner
 
