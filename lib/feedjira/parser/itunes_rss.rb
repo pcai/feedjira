@@ -35,7 +35,7 @@ module Feedjira
       # TODO subcategories not supported correctly - they are at the same level
       #   as the main categories
       elements :"itunes:category", :as => :itunes_categories, :value => :a_text
-      element :"category", :as => :category, :value => :text
+      element :category, :as => :category
 
       elements :"itunes:owner", :as => :itunes_owners, :class => ITunesRSSOwner
 
